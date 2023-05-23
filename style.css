@@ -1,0 +1,319 @@
+:root{
+    --color-primary:#7380ec;
+    --color-danger:#ff7782;
+    --color-success:#41f1b6;
+    --color-warning:#ffbb55;
+    --color-white:#fff;
+    --color-info-dark:#7d8da1;
+    --color-info-light:#dce1eb;
+    --color-dark:#363949;
+    --color-light:rgba(132, 139, 200, 0.18);
+    --color-primary-variant:#111e88;
+    --color-dark-variant:#677483;
+    --color-background:#f6f6f9;
+
+    --card-border-radius:2rem;
+    --border-radius-1:0.4rem;
+    --border-radius-2:0.8rem;
+    --border-radius-3:1.2rem;
+
+    --card-padding:1.6rem;
+    --padding-1:1.2rem;
+
+    --box-shadow:0 2rem 3rem var(--color-light);
+}
+
+*{
+    padding: 0;
+    margin:0;
+    text-decoration: none;
+    outline:none;
+    border:none;
+    box-sizing: border-box;
+}
+
+html{
+    font-size:62.5%
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    color:var(--color-dark);
+    font-size: 1.6rem;
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+    background-color: var(--color-background);
+    font-weight: 300;
+    user-select:none;
+    appearance: none;
+}
+
+a{
+    color:var(--color-dark); 
+}
+
+img{
+    width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.profile-photo{
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: 16rem auto 24rem;
+    width: 96%;
+    margin:0 auto;
+    gap:1.6rem;
+}
+
+h1{
+    font-size: 2rem;
+    font-weight: 800;
+    margin: 0;
+}
+
+h2{
+    font-size: 3.2rem;
+}
+
+h3{
+    font-size: 1rem;
+}
+
+h4{
+    font-size: 0.4rem;
+}
+
+h5{
+    font-size: 0.8rem;
+}
+
+small,  
+p{
+    font-size: 0.88rem;
+    color:var(--color-dark-variant);
+    
+
+}
+b{
+    font-size: 1.2rem;
+}
+
+
+/* sidebar */
+aside{
+    height: 100vh;
+  }
+
+  aside .top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  aside .top span{
+    color:var(--color-danger)
+  }
+
+  aside .top .close-btn{
+    display: none;
+  }
+
+  aside .sidebar{
+    height: 86vh;
+    /* background-color: red; */
+    flex-direction: column;
+    position: relative;
+    top:0.8rem;
+  }
+
+  .sidebar h3 {
+    font-weight: 500;
+    color: var(--color-info-dark);
+    transition: all 0.5s ease;
+  }
+
+  aside .sidebar a{
+    display: flex;
+    align-items: center;
+    margin-left: 0.8rem;
+    gap:0.4rem;
+    height: 3.2rem;
+    position: relative;
+    transition: all 0.3s ease;
+  }
+
+  aside .sidebar a i{
+    color: var(--color-info-dark);
+    font-size: 1.6rem;
+    transition: all 0.3s ease;
+  }
+
+  aside .sidebar a:last-child{
+    position: absolute;
+    bottom:-0.4rem;
+    width: 100%;
+   }
+
+    .sidebar a.active{
+    background-color: var(--color-info-light) ;
+    margin-left: 0;
+   }
+
+   .sidebar a.active i,
+   .sidebar a.active h3
+   {
+    color:var(--color-primary-variant);
+
+   }
+
+  aside .sidebar a.active::before{
+    content: "";
+    height: 100%;
+    width: 0.6rem;
+    background-color: var(--color-primary-variant);
+   }
+
+   .sidebar a:hover i{
+    margin-left: 1rem
+   }
+
+   .sidebar a:hover i,
+   .sidebar a:hover h3
+  {
+    color:var(--color-primary-variant);
+  }
+
+  aside .sidebar .message-count{
+    background-color: var(--color-danger);
+    padding: .1rem .5rem;
+    border-radius: var(--border-radius-1);
+    font-size: 0.88rem;
+  }
+
+  /* main */
+
+  main{
+    margin-top:4rem;
+}
+
+main .date{
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: var(--color-info-light);
+}
+main .date input[type='date']{
+  background-color:transparent;
+  color:var(--color-dark-variant);
+}
+
+main .date input[type='date']::webkit-calendar-picker-indicator{
+  display: none;
+}
+
+
+
+
+main .insights-card-wrappers{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:0.88rem;
+  margin-top: 1rem;
+}
+
+main .insights-card-wrappers>div{
+  background-color: var(--color-white);
+  box-shadow: var(--box-shadow);
+  padding: var(--card-padding);
+  border-radius: var(--card-border-radius);
+}
+
+main .insights-card-wrappers>div i{
+  background-color: var(--color-danger);
+  padding:0.4rem;
+  border-radius: 50%;
+  color: var(--color-white);
+  font-size: 1rem;
+}
+
+main .insights-card-wrappers>div.sales-card i{
+  background-color: var(--color-success);
+}
+
+main .insights-card-wrappers>div.expenses-card i{
+  background-color: var(--color-warning);
+}
+
+.insights-card-wrappers .left-side {
+  margin-right: 1rem;
+}
+
+
+main .insights-card-wrappers >div .middle{
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+main .insights-card-wrappers >div .middle .progress-bar {
+  position: relative;
+  width:6rem;
+  height: 6rem;
+  border-radius: 50%;
+
+}
+
+main .insights-card-wrappers >div .middle .progress-bar svg{
+  width: 12rem;
+  height: 12rem;
+
+}
+
+main .insights-card-wrappers >div .middle .progress-bar svg circle{
+  fill:none;
+  stroke: var(--color-success);
+  stroke-width: 12;
+  stroke-linecap: round;
+  transform: translate(7px, 7px);
+  stroke-dasharray: 110;
+  stroke-dashoffset: -1;
+}
+
+main .insights-card-wrappers >div.expenses-card .middle .progress-bar svg circle{
+  stroke-dasharray: 120;
+  stroke-dashoffset: -20;
+  stroke: var(--color-warning);
+}
+
+main .insights-card-wrappers >div.income-card .middle .progress-bar svg circle{
+  stroke-dasharray: 130;
+  stroke-dashoffset: 20;
+  stroke:  var(--color-danger);
+}
+
+.progress-bar .number{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%, -50%);
+}
+main .insights-card-wrappers>div small{
+  display: block;
+  margin-top: 0.4rem;
+  font-size: 0.75rem;
+}
+
+ 
+  
+  /* end of main */
+
+
+
+
